@@ -7,3 +7,7 @@ from ogrenci o
  o.sinif_id = s.id 
  and
  o1.id = s.okul_id;
+
+
+
+//Bu bir not.
