@@ -1,0 +1,9 @@
+create view ogr_okul_getir
+as
+select o1.okul_adi, s.sinif_adi, s.seviye, o.ogrenci_adi, o.ogrenci_soyadi, o.ogrenci_no 
+from ogrenci o 
+, siniflar s, okullar o1 
+ where
+ o.sinif_id = s.id 
+ and
+ o1.id = s.okul_id;

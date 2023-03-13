@@ -1,0 +1,1 @@
+select seviye,count(*) from siniflar s inner join ogrenci o on o.sinif_id = s.id where seviye = 1 group by seviye

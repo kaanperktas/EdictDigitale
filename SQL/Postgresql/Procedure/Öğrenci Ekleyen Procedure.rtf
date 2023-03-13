@@ -1,0 +1,9 @@
+
+
+create procedure ogrenci_ekle (p1 varchar, p2 varchar, p3 int, p4 int)
+language sql
+as $$
+insert into ogrenci (ogrenci_adi, ogrenci_soyadi, ogrenci_no, sinif_id) values (p1, p2, p3, p4);
+$$;
+
+Call ogrenci_ekle('Hatice','Kısalmış', 211, 7);

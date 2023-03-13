@@ -1,0 +1,27 @@
+select sd.ders_id, sd.sinif_id, o.id, array_agg(o.id),count(*) from sinif_dersler sd, ogrenci o, siniflar s, dersler d
+where
+o.sinif_id = s.id
+and
+d.id = sd.ders_id
+and
+s.id = sd.sinif_id
+and
+d.ders_adi = 'Fizik'
+group by
+sd.ders_id, sd.sinif_id, o.id
+
+
+
+diğer seçenek
+
+select sd.ders_id, sd.sinif_id, d.ders_adi, array_agg(o.ogrenci_adi),count(*) from sinif_dersler sd, ogrenci o, siniflar s, dersler d
+where
+o.sinif_id = s.id
+and
+d.id = sd.ders_id
+and
+s.id = sd.sinif_id
+and
+d.ders_adi = 'Fizik'
+group by
+sd.ders_id, sd.sinif_id, d.ders_adi

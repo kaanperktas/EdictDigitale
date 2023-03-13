@@ -1,0 +1,3 @@
+select s.sinif_adi, s.seviye, array_agg(o.ogrenci_adi),count(*) from ogrenci o, siniflar s
+	where o.sinif_id = s.id
+	group by s.sinif_adi, s.seviye

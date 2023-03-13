@@ -1,0 +1,26 @@
+ders saati şu olan dersleri getiren fonksiyon
+
+create function ders_getir (prmt int)
+	returns table
+	(
+		id_sutun int,
+		ders_adi_sutun varchar,
+		ders_saat_sutun int,
+		ders_gunu_sutun varchar
+	)
+AS
+$$
+Begin
+	Return Query
+	Select
+	id,
+	ders_adi,
+	ders_saat,
+	ders_gunu
+ From
+  dersler
+  where
+  ders_saat = prmt;
+End;
+$$
+language plpgsql;

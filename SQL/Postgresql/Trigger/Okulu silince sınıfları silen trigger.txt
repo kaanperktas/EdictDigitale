@@ -1,0 +1,10 @@
+Create or replace function delete_siniflar_trg() returns trigger as $delete_siniflar_trg$
+BEGIN
+delete from siniflar where okul_id = old.id;
+return null;
+END;
+$delete_siniflar_trg$ 
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER delete_siniflar_trg AFTER DELETE ON okullar
+FOR EACH ROW EXECUTE FUNCTION delete_siniflar_trg();
